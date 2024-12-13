@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="banner_btn">
+        <item name="android:background">@drawable/ic_button_background</item>
+        <item name="colorAccent">#4DFFFFFF</item>
+        <item name="height">24dp</item>
+    </style>
+    <style name="movie_banner">
+        <item name="android:background">@drawable/ic_button_background</item>
+    </style>
+</resources>
