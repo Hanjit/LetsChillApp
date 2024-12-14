@@ -9,7 +9,7 @@
     tools:context=".LoginActivity">
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/homeLogo2Iv"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="150dp"

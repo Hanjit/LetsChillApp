@@ -8,7 +8,7 @@
     tools:context=".DetailFragment">
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/detailImageIv"
         android:layout_width="match_parent"
         android:layout_height="368dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,18 +18,18 @@
         tools:src="@tools:sample/avatars" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/detailPlayBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
         android:src="@drawable/round_play_circle_filled_48"
-        app:layout_constraintBottom_toBottomOf="@id/imageView5"
+        app:layout_constraintBottom_toBottomOf="@id/detailImageIv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/detailImageIv" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/detailStarBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -37,10 +37,10 @@
         android:background="@null"
         android:src="@drawable/baseline_star_48"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/detailImageIv" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/detailShareBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -48,10 +48,10 @@
         android:background="@null"
         android:src="@drawable/round_share_48"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/detailImageIv" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/detailTitleTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -61,10 +61,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintTop_toBottomOf="@+id/detailPlayBtn" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/detailGenreTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -72,10 +72,10 @@
         android:textColor="#9E9E9E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/detailTitleTv" />
 
     <RatingBar
-        android:id="@+id/ratingBar2"
+        android:id="@+id/detailRatingRb"
         style="@style/Widget.AppCompat.RatingBar.Indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
         android:stepSize="0.1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/detailGenreTv" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -98,7 +98,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar2">
+        app:layout_constraintTop_toBottomOf="@+id/detailRatingRb">
 
         <LinearLayout
             android:layout_width="72dp"
@@ -107,7 +107,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/detailText1Tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Year"
@@ -115,7 +115,7 @@
                 android:textColor="#9E9E9E" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/detailYearTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -133,7 +133,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/detailText2Tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rating"
@@ -141,7 +141,7 @@
                 android:textColor="#9E9E9E" />
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/detailRatingTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -159,7 +159,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/detailText3Tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Length"
@@ -167,7 +167,7 @@
                 android:textColor="#9E9E9E" />
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/detailLengthTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -180,7 +180,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/detailLine1Iv"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="96dp"
@@ -192,7 +192,7 @@
         app:srcCompat="@drawable/ic_shape_line" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/detailDescriptionTv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -204,10 +204,10 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+        app:layout_constraintTop_toBottomOf="@+id/detailLine1Iv" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/detailLine2Iv"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="96dp"
@@ -215,7 +215,7 @@
         android:layout_marginEnd="96dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/detailDescriptionTv"
         app:srcCompat="@drawable/ic_shape_line" />
 
 
