@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "1036524301464",
+    "firebase_url": "https://letschill-01-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "letschill-01",
+    "storage_bucket": "letschill-01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036524301464:android:610172db894447433fb4ed",
+        "android_client_info": {
+          "package_name": "com.example.letschill"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkUg-4uON3VbFdhyKalQbgRD7tHfDbI2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036524301464:android:8620d31358be72d93fb4ed",
+        "android_client_info": {
+          "package_name": "com.example.letschill1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkUg-4uON3VbFdhyKalQbgRD7tHfDbI2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
