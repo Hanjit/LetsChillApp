@@ -8,4 +8,9 @@
     <style name="movie_banner">
         <item name="android:background">@drawable/ic_button_background</item>
     </style>
+    <style name="login_btn">
+        <item name="android:background">@drawable/ic_button_login_background</item>
+        <item name="colorAccent">#3689B8</item>
+        <item name="height">24dp</item>
+    </style>
 </resources>
