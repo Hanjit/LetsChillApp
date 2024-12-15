@@ -9,6 +9,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--    <FrameLayout-->
+<!--        android:id="@+id/fragmentContainer"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/mainLoginTV">-->
+
+<!--    </FrameLayout>-->
+
     <TextView
         android:id="@+id/mainLoginTV"
         android:layout_width="wrap_content"
@@ -20,12 +30,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
-        android:id="@+id/fragmentContainer"
+        android:id="@+id/frameLayoutMenu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainLoginTV">
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
 
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3B8BFF"
+            app:itemPaddingBottom="5dp"
+            app:menu="@menu/bottom_nav_menu" />
     </FrameLayout>
+
 </LinearLayout>

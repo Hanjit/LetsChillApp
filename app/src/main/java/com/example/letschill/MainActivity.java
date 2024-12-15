@@ -2,10 +2,13 @@ package com.example.letschill;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -13,7 +16,12 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class MainActivity extends AppCompatActivity {
+
+    private BottomNavigationView bottomNavView;
+    private FrameLayout frameLayoutMenu;
 
     TextView mainLoginTV;
 
@@ -39,9 +47,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.fragmentContainer, new PopularFragment());
-        transaction.commit();
+//        FragmentManager manager = getSupportFragmentManager();
+//        FragmentTransaction transaction = manager.beginTransaction();
+//        transaction.replace(R.id.fragmentContainer, new PopularFragment());
+//        transaction.commit();
+
+        bottomNavView = findViewById(R.id.bottomNavView);
+        frameLayoutMenu = findViewById(R.id.frameLayoutMenu);
+
+        bottomNavView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                int itemId = item.getItemId();
+
+                if (itemId == R.id.navHome) {
+
+                } else if (itemId == R.id.navSearch) {
+                    
+                } else if (itemId == R.id.navPopular) {
+
+                } else { // nav Notification
+
+                }
+
+                return false;
+            }
+        });
     }
 }

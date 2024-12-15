@@ -11,10 +11,10 @@
         android:id="@+id/detailImageIv"
         android:layout_width="match_parent"
         android:layout_height="368dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:scaleType="centerCrop"
         tools:src="@tools:sample/avatars" />
 
     <ImageButton
@@ -217,6 +217,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailDescriptionTv"
         app:srcCompat="@drawable/ic_shape_line" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
