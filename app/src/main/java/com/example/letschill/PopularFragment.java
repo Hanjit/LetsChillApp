@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -54,7 +55,8 @@ public class PopularFragment extends Fragment {
                     }
 
                     if (popularListRv.getAdapter() == null) {
-                        PopularAdapter adapter = new PopularAdapter(popularList);
+                        FragmentManager manager = getParentFragmentManager();
+                        PopularAdapter adapter = new PopularAdapter(popularList, manager);
                         popularListRv.setLayoutManager(new LinearLayoutManager(view.getContext()));
                         popularListRv.setAdapter(adapter);
                     } else {
