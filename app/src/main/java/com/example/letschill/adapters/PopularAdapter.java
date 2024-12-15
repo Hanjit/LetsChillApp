@@ -1,6 +1,7 @@
 package com.example.letschill.adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +19,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.letschill.DetailFragment;
 import com.example.letschill.R;
 import com.example.letschill.models.PopularData;
 
@@ -26,9 +29,11 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopularH
 
     private Context context;
     private ArrayList<PopularData> populars;
+    FragmentManager manager;
 
-    public PopularAdapter(ArrayList<PopularData> populars) {
+    public PopularAdapter(ArrayList<PopularData> populars, FragmentManager manager) {
         this.populars = populars;
+        this.manager = manager;
     }
 
     @NonNull
@@ -95,7 +100,29 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopularH
             popularGenreRv.setAdapter(adapter);
 
 //            addEvent button
+            popularWatchBtn.setOnClickListener(v -> {
+                DetailFragment fragment = new DetailFragment();
+                Bundle args = getBundle(popularData);
+                fragment.setArguments(args);
+                manager.beginTransaction()
+                        .replace(R.id.fragmentContainer, fragment)
+                        .commit();
+            });
 
+        }
+
+        private @NonNull Bundle getBundle(PopularData popularData) {
+            Bundle args = new Bundle();
+            args.putString("movieName", popularData.getName());
+            args.putString("movieImage", popularData.getImage());
+            args.putString("movieYear", popularData.getYear());
+            args.putString("movieAge", popularData.getAge());
+            args.putString("movieLength", popularData.getLength());
+            args.putString("movieDescription", popularData.getDescription());
+            args.putFloat("movieRating", popularData.getRating());
+            args.putStringArrayList("movieStars", popularData.getStars());
+            args.putStringArrayList("movieGenre", popularData.getGenre());
+            return args;
         }
     }
 }

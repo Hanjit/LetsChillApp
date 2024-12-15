@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:scaleType="centerCrop"
+        android:scaleType="fitStart"
         tools:src="@tools:sample/avatars" />
 
     <ImageButton
@@ -141,7 +141,7 @@
                 android:textColor="#9E9E9E" />
 
             <TextView
-                android:id="@+id/detailRatingTv"
+                android:id="@+id/detailAgeTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
