@@ -15,8 +15,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView mainLoginTV;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,19 +26,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        mainLoginTV = findViewById(R.id.mainLoginTV);
-        mainLoginTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.fragmentContainer, new PopularFragment());
+        transaction.replace(R.id.fragmentContainer, new MoviesFragment());
         transaction.commit();
     }
 }
