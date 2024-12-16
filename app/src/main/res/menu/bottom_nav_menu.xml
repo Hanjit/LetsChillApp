@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/icon_home"
+        android:iconTint="#A8A5A5"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/navSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/icon_search"
+        android:iconTint="#A8A5A5"
+        android:title="Search" />
+
+    <item
+        android:id="@+id/navPopular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/icon_popular"
+        android:iconTint="#A8A5A5"
+        android:title="Popular" />
+
+    <item
+        android:id="@+id/navNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/icon_notification"
+        android:iconTint="#A8A5A5"
+        android:title="Notification" />
+</menu>

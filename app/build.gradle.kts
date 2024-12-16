@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation("com.github.dhaval2404:imagepicker:2.1")
     implementation(libs.firebase.database)
     implementation(libs.glide)
     implementation (libs.glide.transformations)

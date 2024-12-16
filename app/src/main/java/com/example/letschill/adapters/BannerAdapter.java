@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.letschill.R;
 import com.example.letschill.models.BannerData;
@@ -68,8 +70,11 @@ public class BannerAdapter extends RecyclerView.Adapter<BannerAdapter.BannerHold
         }
 
         void setImage(BannerData bannerData) {
+            RequestOptions requestOptions = new RequestOptions();
+            requestOptions.transform(new CenterCrop());
             Glide.with(context)
                     .load(bannerData.getImage())
+                    .apply(requestOptions)
                     .into(bannerImageIV);
             bannerInfoTV.setText(bannerData.getYear() + " . " + bannerData.getAge() + " . " + bannerData.getTime());
             bannerDescriptionTV.setText(bannerData.getDescription());

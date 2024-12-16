@@ -63,7 +63,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopularH
         private TextView popularTitleTv, popularInfoTv, popularDescriptionTv, popularDirectorTv, popularWriterTv, popularStarsTv;
         private RecyclerView popularGenreRv;
         private Button popularWatchBtn, popularDownloadBtn;
-        private String year, age, length;
+        private String starString = "";
         private ArrayList<String> stars;
 
         public PopularHolder(@NonNull View itemView) {
@@ -108,6 +108,16 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopularH
                         .replace(R.id.fragmentContainer, fragment)
                         .commit();
             });
+
+            stars = popularData.getStars();
+            for (int i = 0; i < stars.size(); i++){
+                if (i == stars.size() - 1) {
+                    starString += stars.get(i);
+                } else {
+                    starString += stars.get(i) + " | ";
+                }
+            }
+            popularStarsTv.setText(starString);
 
         }
 
