@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavView;
     private FrameLayout frameLayoutMenu;
 
-    TextView mainLoginTV;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,17 +32,6 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        });
-
-        mainLoginTV = findViewById(R.id.mainLoginTV);
-        mainLoginTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SplashScreenActivity.class);
-//                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
         });
 
         FragmentManager manager = getSupportFragmentManager();
