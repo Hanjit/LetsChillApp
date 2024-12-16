@@ -35,7 +35,7 @@ public class VideoActivity extends AppCompatActivity {
         });
         videoViewVV = findViewById(R.id.videoViewVV);
 
-        String videoUrl = getIntent().getStringExtra("movieUrl");
+        String videoUrl = getIntent().getStringExtra("videoUrl");
         if (videoUrl != null) {
             Uri videoUri = Uri.parse(videoUrl);
             videoViewVV.setVideoURI(videoUri);
