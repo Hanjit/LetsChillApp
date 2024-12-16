@@ -6,32 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/main">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/profileIV"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="50dp"
-        android:background="#707073"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/circular"
-        app:srcCompat="@drawable/icon_person" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/changeImageBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="4dp"
-        android:clickable="true"
-        android:contentDescription="TODO"
-        android:focusable="true"
-        app:backgroundTint="#3689B8"
-        app:layout_constraintBottom_toBottomOf="@+id/profileIV"
-        app:layout_constraintEnd_toEndOf="@+id/profileIV"
-        app:srcCompat="@drawable/icon_camera" />
-
     <TextView
         android:id="@+id/profileTitleTV"
         android:layout_width="0dp"
@@ -58,37 +32,68 @@
         app:srcCompat="@drawable/icon_arrow_left"
         app:tint="@color/white" />
 
-    <TextView
-        android:id="@+id/profileNameTV"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profilePicContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="177dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="176dp"
-        android:layout_marginBottom="8dp"
-        android:text="Username"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/menuLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileIV" />
+        app:layout_constraintTop_toBottomOf="@+id/profileTitleTV">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileIV"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#707073"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/circular"
+            app:srcCompat="@drawable/icon_person" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/changeImageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:clickable="true"
+            android:contentDescription="TODO"
+            android:focusable="true"
+            app:backgroundTint="#3689B8"
+            app:layout_constraintBottom_toBottomOf="@+id/profileIV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/icon_camera" />
+
+        <TextView
+            android:id="@+id/profileNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Username"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileIV" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/menuLayout"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/button_rounded"
         android:backgroundTint="#23252C"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileNameTV">
+        app:layout_constraintTop_toBottomOf="@+id/profilePicContainer">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/downloadLayout"
@@ -150,7 +155,7 @@
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="40dp"
             android:background="@drawable/custom_login_et"
             android:backgroundTint="#363333"
@@ -204,7 +209,7 @@
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="40dp"
             android:background="@drawable/custom_login_et"
             android:backgroundTint="#363333"
@@ -260,7 +265,7 @@
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="40dp"
             android:background="@drawable/custom_login_et"
             android:backgroundTint="#363333"
@@ -315,7 +320,7 @@
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="40dp"
             android:background="@drawable/custom_login_et"
             android:backgroundTint="#363333"
@@ -371,9 +376,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="48dp"
             android:layout_marginEnd="40dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/button_rounded"
             android:text="Log Out"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
