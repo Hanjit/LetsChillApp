@@ -88,10 +88,10 @@ public class DetailFragment extends Fragment {
         detailRatingRb.setRating(rating);
 
         for (int i = 0; i < genre.size(); i++){
-            if (i == genre.size() - 2) {
-                genreString.concat(genre.get(i));
+            if (i == genre.size() - 1) {
+                genreString += genre.get(i);
             } else {
-                genreString.concat(genre.get(i) + " | ");
+                genreString += genre.get(i) + " | ";
             }
         }
         detailGenreTv.setText(genreString);
