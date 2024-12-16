@@ -17,7 +17,8 @@ import java.util.Objects;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    ImageView profileIV;
+
+    ImageView profileIV, profileBackIV;
     FloatingActionButton changeImageBtn;
 
     @Override
@@ -28,8 +29,8 @@ public class ProfileActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getColor(R.color.main)));
 
         profileIV = findViewById(R.id.profileIV);
-        changeImageBtn = findViewById(R.id.changeImageBtn);
 
+        changeImageBtn = findViewById(R.id.changeImageBtn);
         changeImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,6 +39,14 @@ public class ProfileActivity extends AppCompatActivity {
                         .compress(1024)			//Final image size will be less than 1 MB(Optional)
                         .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
                         .start();
+            }
+        });
+
+        profileBackIV = findViewById(R.id.profileBackIV);
+        profileBackIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

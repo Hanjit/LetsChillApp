@@ -24,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavView;
     private FrameLayout frameLayoutMenu;
 
-    TextView mainLoginTV;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
