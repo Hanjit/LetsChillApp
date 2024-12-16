@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -23,17 +24,18 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavView;
     private FrameLayout frameLayoutMenu;
+    private ImageView mainProfileIv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+//        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainLoginBtn), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainLoginBtn), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
 
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction()
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavView = findViewById(R.id.bottomNavView);
         bottomNavView.setSelectedItemId(R.id.navHome);
         frameLayoutMenu = findViewById(R.id.frameLayoutMenu);
+        mainProfileIv = findViewById(R.id.mainProfileIv);
 
         // assign navbar
         bottomNavView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -60,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.navPopular) {
                     transaction.replace(R.id.fragmentContainer, new PopularFragment());
                     transaction.addToBackStack(null);
+                } else if (item.getItemId() == R.id.navNotification) {
+                    transaction.replace(R.id.fragmentContainer, new NotificationFragment());
                 } else {
                     return false;
                 }
@@ -67,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
                 transaction.commit();
                 return true;
             }
+        });
+
+        mainProfileIv.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ProfileActivity.class);
+            startActivity(intent);
         });
     }
 }
