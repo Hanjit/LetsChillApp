@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Warna ikon ketika dipilih -->
+    <item android:state_checked="true" android:color="@color/white" />
+
+    <!-- Warna ikon default (belum dipilih) -->
+    <item android:color="#A8A5A5" />
+</selector>

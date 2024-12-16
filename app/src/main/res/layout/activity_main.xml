@@ -42,9 +42,10 @@
             android:id="@+id/bottomNavView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#3B8BFF"
+            android:background="@drawable/background_navbar"
             app:itemPaddingBottom="5dp"
-            app:menu="@menu/bottom_nav_menu" />
+            app:menu="@menu/bottom_nav_menu"
+            app:itemIconTint="@drawable/bottom_nav_color"/>
     </FrameLayout>
 
 
