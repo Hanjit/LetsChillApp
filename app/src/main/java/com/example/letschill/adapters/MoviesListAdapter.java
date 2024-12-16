@@ -1,6 +1,7 @@
 package com.example.letschill.adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,12 +9,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.letschill.DetailFragment;
 import com.example.letschill.R;
 import com.example.letschill.models.MoviesData;
 
@@ -51,7 +54,27 @@ public class MoviesListAdapter extends RecyclerView.Adapter<MoviesListAdapter.Mo
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                pindah kemana saya tak tau
+                Bundle bundle = new Bundle();
+                bundle.putString("movieName", movies.get(position).getTitle());
+                bundle.putString("movieImage", movies.get(position).getPoster());
+                bundle.putString("movieYear", movies.get(position).getYear());
+                bundle.putString("movieAge", movies.get(position).getAge());
+                bundle.putString("movieUrl", movies.get(position).getTrailer());
+                bundle.putString("movieLength", movies.get(position).getTime());
+                bundle.putString("movieDescription", movies.get(position).getDescription());
+                bundle.putFloat("movieRating", movies.get(position).getImdb());
+//                bundle.putStringArrayList("movieStars", movies.get(position).getStars());
+                bundle.putStringArrayList("movieGenre", movies.get(position).getGenre());
+
+                // Load DetailFragment with data
+                DetailFragment detailFragment = new DetailFragment();
+                detailFragment.setArguments(bundle);
+
+                ((FragmentActivity) context).getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragmentContainer, detailFragment) // Replace with your container ID
+                        .addToBackStack(null)
+                        .commit();
             }
         });
     }

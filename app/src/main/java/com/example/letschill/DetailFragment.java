@@ -1,11 +1,13 @@
 package com.example.letschill;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,8 +29,8 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class DetailFragment extends Fragment {
 
-    private String name, image, year, age, length, description, genreString;
-    private float rating;
+    private String name, image, year, age, length, description, genreString, url;
+    private Float rating;
     private ArrayList<String> genre, stars;
 
     private ImageView detailImageIv;
@@ -46,6 +48,7 @@ public class DetailFragment extends Fragment {
             image = getArguments().getString("movieImage");
             year = getArguments().getString("movieYear");
             age = getArguments().getString("movieAge");
+            url = getArguments().getString("movieUrl");
             length = getArguments().getString("movieLength");
             description = getArguments().getString("movieDescription");
             rating = getArguments().getFloat("movieRating");
@@ -59,6 +62,8 @@ public class DetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_detail, container, false);
+
+        Log.e("TAG", "onCreateView: " + url);
 
         manager = getParentFragmentManager();
         detailImageIv = view.findViewById(R.id.detailImageIv);
@@ -85,6 +90,7 @@ public class DetailFragment extends Fragment {
         detailAgeTv.setText(age);
         detailLengthTv.setText(length);
         detailDescriptionTv.setText(description);
+        detailAgeTv.setText(age);
         detailRatingRb.setRating(rating);
 
         for (int i = 0; i < genre.size(); i++){
@@ -97,8 +103,17 @@ public class DetailFragment extends Fragment {
         detailGenreTv.setText(genreString);
 
         detailPlayBtn.setOnClickListener(v -> {
-            Toast toast = Toast.makeText(view.getContext(), "Play movie clicked", Toast.LENGTH_SHORT);
-            toast.show();
+            String videoUrl = getArguments().getString("movieUrl");
+            if (videoUrl != null) {
+                Toast toast = Toast.makeText(getContext(), "Play movie clicked", Toast.LENGTH_SHORT);
+                toast.show();
+                Intent intent = new Intent(this.getContext(), VideoActivity.class);
+                intent.putExtra("videoUrl", videoUrl);
+                startActivity(intent);
+            }else {
+                Toast toast = Toast.makeText(view.getContext(), "Movie not available", Toast.LENGTH_SHORT);
+                toast.show();
+            }
         });
 
         detailStarBtn.setOnClickListener(v -> {
