@@ -37,15 +37,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:text="Profile"
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/profileBackIV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/profileBackIV"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/profileBackIV" />
 
     <ImageView
         android:id="@+id/profileBackIV"
@@ -93,14 +93,12 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/downloadLayout"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="56dp"
             android:layout_marginStart="40dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="40dp"
-            android:layout_marginBottom="355dp"
             android:background="@drawable/custom_login_et"
             android:backgroundTint="#363333"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -150,19 +148,16 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/listLayout"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="56dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="40dp"
-            android:layout_marginBottom="300dp"
             android:background="@drawable/custom_login_et"
             android:backgroundTint="#363333"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintTop_toBottomOf="@+id/downloadLayout">
 
             <TextView
                 android:id="@+id/textView7"
@@ -207,19 +202,16 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/settingLayout"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="56dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="124dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="40dp"
-            android:layout_marginBottom="245dp"
             android:background="@drawable/custom_login_et"
             android:backgroundTint="#363333"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
+            app:layout_constraintTop_toBottomOf="@+id/listLayout">
 
             <TextView
                 android:id="@+id/textView8"
@@ -266,17 +258,15 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/accountLayout"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="56dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="40dp"
-            android:layout_marginBottom="185dp"
             android:background="@drawable/custom_login_et"
             android:backgroundTint="#363333"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/settingLayout">
 
             <TextView
                 android:id="@+id/textView9"
@@ -323,19 +313,16 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/helpLayout"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="56dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="240dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="40dp"
-            android:layout_marginBottom="125dp"
             android:background="@drawable/custom_login_et"
             android:backgroundTint="#363333"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
+            app:layout_constraintTop_toBottomOf="@+id/accountLayout">
 
             <TextView
                 android:id="@+id/textView10"
