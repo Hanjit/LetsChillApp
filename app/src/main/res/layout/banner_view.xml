@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/bannerImageIV"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="match_parent"
         android:adjustViewBounds="false"
         android:minHeight="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,9 +19,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical"
+        android:background="@drawable/banner_gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="200dp"
         android:layout_marginTop="100dp"
+        android:layout_marginBottom="30dp"
         android:orientation="vertical"
         android:paddingRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"

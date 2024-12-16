@@ -4,11 +4,35 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MoviesData implements Serializable {
-    private String Poster, Title, Time, Trailer;
-//    private int Year, Imdb;
+    private String Poster, Title, Time, Trailer, Description, Year, Age;
+    private float Imdb;
     private ArrayList<String> Genre;
 
+    public String getAge() {
+        return Age;
+    }
+
+    public void setAge(String age) {
+        Age = age;
+    }
+
+    public float getImdb() {
+        return Imdb;
+    }
+
+    public void setImdb(float imdb) {
+        Imdb = imdb;
+    }
+
     public MoviesData() {
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
     }
 
     public String getPoster() {
@@ -35,14 +59,6 @@ public class MoviesData implements Serializable {
         Time = time;
     }
 
-//    public int getYear() {
-//        return Year;
-//    }
-//
-//    public void setYear(int year) {
-//        Year = year;
-//    }
-
     public String getTrailer() {
         return Trailer;
     }
@@ -51,14 +67,6 @@ public class MoviesData implements Serializable {
         Trailer = trailer;
     }
 
-//    public int getImdb() {
-//        return Imdb;
-//    }
-//
-//    public void setImdb(int imdb) {
-//        Imdb = imdb;
-//    }
-
     public ArrayList<String> getGenre() {
         return Genre;
     }
@@ -66,4 +74,13 @@ public class MoviesData implements Serializable {
     public void setGenre(ArrayList<String> genre) {
         Genre = genre;
     }
+
+    public String getYear() {
+        return Year;
+    }
+
+    public void setYear(String year) {
+        Year = year;
+    }
+
 }
