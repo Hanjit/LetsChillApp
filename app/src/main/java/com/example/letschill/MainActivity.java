@@ -2,6 +2,7 @@ package com.example.letschill;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -35,11 +36,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.fragmentContainer, new MoviesFragment());
-        transaction.commit();
+        manager.beginTransaction()
+                .replace(R.id.fragmentContainer, new MoviesFragment())
+                .commit();
 
         bottomNavView = findViewById(R.id.bottomNavView);
+        bottomNavView.setSelectedItemId(R.id.navHome);
         frameLayoutMenu = findViewById(R.id.frameLayoutMenu);
 
         // assign navbar
@@ -47,19 +49,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                int itemId = item.getItemId();
+                FragmentTransaction transaction = manager.beginTransaction();
 
-                if (itemId == R.id.navHome) {
-
-                } else if (itemId == R.id.navSearch) {
-
-                } else if (itemId == R.id.navPopular) {
-
-                } else { // nav Notification
-
+                if (item.getItemId() == R.id.navHome) {
+                    transaction.replace(R.id.fragmentContainer, new MoviesFragment());
+                    transaction.addToBackStack(null);
+                } else if (item.getItemId() == R.id.navSearch) {
+                    transaction.replace(R.id.fragmentContainer, new MoviesFragment());
+                    transaction.addToBackStack(null);
+                } else if (item.getItemId() == R.id.navPopular) {
+                    transaction.replace(R.id.fragmentContainer, new PopularFragment());
+                    transaction.addToBackStack(null);
+                } else {
+                    return false;
                 }
 
-                return false;
+                transaction.commit();
+                return true;
             }
         });
     }
