@@ -68,6 +68,7 @@
             android:background="@drawable/background_navbar"
             app:itemPaddingBottom="5dp"
             app:menu="@menu/bottom_nav_menu"
+            app:itemTextColor="@color/white"
             app:itemIconTint="@drawable/bottom_nav_color"/>
     </FrameLayout>
 
