@@ -65,13 +65,14 @@ public class MainActivity extends AppCompatActivity {
                     transaction.replace(R.id.fragmentContainer, new MoviesFragment());
                     transaction.addToBackStack(null);
                 } else if (item.getItemId() == R.id.navSearch) {
-                    transaction.replace(R.id.fragmentContainer, new MoviesFragment());
+                    transaction.replace(R.id.fragmentContainer, new SearchFragment());
                     transaction.addToBackStack(null);
                 } else if (item.getItemId() == R.id.navPopular) {
                     transaction.replace(R.id.fragmentContainer, new PopularFragment());
                     transaction.addToBackStack(null);
                 } else if (item.getItemId() == R.id.navNotification) {
                     transaction.replace(R.id.fragmentContainer, new NotificationFragment());
+                    transaction.addToBackStack(null);
                 } else {
                     return false;
                 }
